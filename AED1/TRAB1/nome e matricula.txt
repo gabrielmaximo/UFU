@@ -1,2 +1,4 @@
+Trabalho sobre Listas (estatica, dinamica simples, dinamica encadeada, duplamente encadeada, com cabeçalho, circular, deck)
+
 NOME: Luís Gabriel Máximo
 MATRÍCULA: 11721BCC027
