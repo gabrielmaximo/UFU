@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1457027184 source:c:\users\backes\desktop\atividade01\listasequencial.c
+	<stdio.h>
+	<stdlib.h>
+	"ListaSequencial.h"
+
+1457026603 c:\users\backes\desktop\atividade01\listasequencial.h
+
+1457028251 source:c:\users\backes\desktop\atividade01\listadinencad.c
+	<stdio.h>
+	<stdlib.h>
+	"ListaDinEncad.h"
+
+1457028251 c:\users\backes\desktop\atividade01\listadinencad.h
+
+1457027155 source:c:\users\backes\desktop\atividade01\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"ListaDinEncad.h"
+
