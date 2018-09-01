@@ -1,0 +1,17 @@
+1-) significa dizer que o algoritmo expressado pela função g(n) tem no maximo o mesmo desempenho 
+de f(n) mas nunca um desempenho pior, sera sempre melhor ou igual ao algoritmo f(n), ou seja, 
+o desempenho é: g(n) <= c.f(n) para n >= m, sendo m o ponto de intersecção das duas funções.
+
+2-) significa dizer que o algoritmo expressado pela função g(n) tem um desempenho oscilante que 
+nunca sera pior e nem melhor que f(n) estara sempre limitado pela função f(n), ou seja, o desempenho
+de g(n) é: c1.f(n) <= g(n) <= c2.f(n) para n >=m, sendo m o ponto de intersecção das duas funções.
+
+3-) significa dizer que o algoritmo expressado pela função g(n) tem no minimo o mesmo desempenho
+de f(n) mas nunca um desempenho melhor, sera sempre pior ou igual ao algoritmo f(n), ou seja, 
+o desempenho é: g(n) >= c.f(n) para n >= m, sendo m o ponto de intersecção das duas funções.
+
+4-) igualando a(n) com b(n) temos n²-n+549 = 49n +49 ==> n²-50n+500 = 0 ==> resolvendo essa
+equação do segundo grau, ira encontrar os dois valores de n que implicam no intervalo onde a
+função a(n) leva menos tempo para executar do que b - [14,36] no conjunto dos naturais.
+
+5-) 
