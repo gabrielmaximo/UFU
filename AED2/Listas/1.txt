@@ -14,4 +14,68 @@ o desempenho é: g(n) >= c.f(n) para n >= m, sendo m o ponto de intersecção da
 equação do segundo grau, ira encontrar os dois valores de n que implicam no intervalo onde a
 função a(n) leva menos tempo para executar do que b - [14,36] no conjunto dos naturais.
 
-5-) 
+5-) 10n³ - 5n² - 10n + 3 é θ(n³) para isso basta considerar duas constantes restringindo acima
+e abaixo da função. => c1.n³ <= n³ <= c2.n³
+
+6-) sim, pois o termo crescente da função é n, portanto ela é explciitamente dependente de n, logo
+é possivel ignorar as constante da função e atribuir a notação θ(n³), podemos considerar tambem
+duas constantes restringindo acima e abaixo da função. => c1.n³ <= n³ <= c2.n³
+
+7-) usaria para todo caso em que n fosse maior que 1. ja a função só usaria para casos em que n fosse
+menor do que 1 incluindo os inteiros negativos.
+
+8-) 
+    (a) 2n + 10 <= c1.n que seria de ordem O(n).
+    
+    (b) (1/2)n.(n+1) <= c1.n² que seria de ordem O(n²)
+
+    (c) n + sqrt(n) <= c1.n que seria de ordem O(n).
+
+    (d) n/1000 <= c1.n que seria de ordem O(n).
+
+    (e) (1/2)n² <= c1.n² que seria de ordem O(n²)
+
+    (f) (1/2)n² - 3n <= c1.n² que seria de ordem O(n²)
+
+9-) O que influencia o tempo de um algoritmo na prática é a entrada de dados que ele ira receber/ler
+
+10-) 
+    * Bastar contar as instruções de:
+        - atribuição, 
+        - acesso a elementos de um array
+        - comparação de valores
+        - incrementos (i++, x++, etc..)
+        - operações aritméticas
+
+11-) Esse tipo de algoritmo (n.log(n)) costuma ser usado em algoritmos que particiona o problema em
+situações mais simples ou menores e resolve caso a caso unindo tudo no final um exemplo é o função 
+quick sort usada para ordenação de dados, para identificar um algorimo assim basta analisar como os
+dados do problema estão sendo processados, se estão sendo resolvido em partes, é um indicío para ser
+identificado como n.log(n), em suma, é o mesmo que um algoritmo log(n) porém geralmente é executado 
+dentro de um loop o que faz com que ele depende das repetições do loop sendo considerado então como n.log(n)
+
+12-) Esse tipo de algoritmo pode ser identificado observando se no algoritmo existe problemas sendo
+transformados em problemas menores, ou seja são tipos de algoritmos que divem os dados e processa de
+forma independente as informações de entrada.
+
+13-) problemas de força bruta, geralmente scripts de quebras de senha, um exemplo também é o fibonacci
+recursivo.
+
+14-) No pior caso esse algoritmo é de ordem O(n³)
+
+15-) No pior caso esse algoritmo é de ordem O(n²)
+
+16-) O(n²)
+
+17-) pior caso: fn = 2n + xn + 2 onde x é o tempo de execução da função print
+     melhor caso: gn = 2
+
+18-) pior caso: f(n) = 2n + xn + 2 onde x é o tempo de execução da função print
+     melhor caso: g(n) = 2
+
+19-) f(n) = 3n + xn + 2 ...
+     g(n) = 2
+
+20-) 
+
+21-) 2n + xn + 2 onde x é o tempo de execução da função print
