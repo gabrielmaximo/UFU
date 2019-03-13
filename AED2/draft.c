@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// exemplo simples de hash
+
 int main(){
 
     int i, V[100] = {}, N = 8, x;
