@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <stdio_ext.h>
 
 int main(){
     char a;
@@ -14,8 +14,8 @@ int main(){
         printf("entre com dados para serem gravados no arquivo:\n");
         scanf("%c",&a);
         if(a == '0') break;
-        fputc(a,f);
-        getchar();
+        fprintf(f,"%c",a);
+        __fpurge(stdin);
     }
     fclose(f);
 
@@ -26,12 +26,9 @@ int main(){
         printf("Erro na abertura do arquivo!\n");
         exit(1);
     }
-    while(1){
-        if(feof(h)) break;
-        
-        b = fgetc(h);
+    while((b = fgetc(h)) != EOF)
         printf("%c", b);
-    }
+    
     printf("\n");
     fclose(h);
     return 0;
