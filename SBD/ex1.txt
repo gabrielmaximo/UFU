@@ -1,0 +1,23 @@
+1. Defina e correlacione os conceitos de banco de dados, sistema de banco de dados e de
+sistema gerenciador de banco de dados.
+
+2. Como os SGBD garantem independência e consistência de dados?
+
+3. Discuta as vantagens de um SBD quando comparado com um sistema de arquivos.
+
+4. Descreva como ocorre a abstração de dados em cada um dos níveis da arquitetura
+em três níveis (three-schema) dos sistemas de banco de dados.4
+
+5. Por que a independência lógica é mais difícil de ser obtida do que a independência física?
+
+6. Diferencie instância e esquema.
+
+7. Qual a diferença entre um esquema de banco de dados e um estado de banco de dados?
+
+8. Qual a diferença entre DDL e DML?
+
+9. Analisando a estrutura de componentes do SGBD dada em aula, explique o que ocorre
+em cada componente e como é o fluxo de dados/informações entre os componentes.
+Basear-se nos textos dos livros sugeridos para leitura. OBS: não é para somente copiar
+dos slides a funcionalidade de cada componente, mas sim para descrever todo o processo
+ocorrido a partir de cada componente externo ao SGBD. 

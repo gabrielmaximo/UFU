@@ -1,0 +1,53 @@
+Exercício 1 - Controle Acadêmico I
+
+ Quer-se construir um BD sobre alunos de uma universidade. O BD deve possuir condições
+de responder às seguintes questões:
+
+ Dado o número do aluno, deseja-se saber:
+• em quais disciplinas está atualmente matriculado
+• quais disciplinas já concluiu
+• qual o curso deste aluno
+• dados pessoais sobre o aluno
+
+ Dado o código de um departamento, deseja-se saber:
+• cursos que estão sob a responsabilidade do departamento
+• detalhes sobre o departamento
+
+ Dado um curso, deseja-se saber:
+• disciplinas obrigatórias do curso
+• disciplinas optativas do curso
+• alunos desse curso
+
+ Dado uma disciplina, deseja-se saber:
+• alunos matriculados na disciplina
+• pré-requisitos da disciplina
+
+ Fazer um esquema conceitual para representar o BD.
+
+Exercício 2 - Sistema de Controle Bancário
+
+ Faça o esquema conceitual para um sistema de controle bancário. Para cada agência do
+sistema deseja-se armazenar seu número, cidade e dados sobre os funcionários que ali
+trabalham, tais como nome, endereço, código e salário.
+ Cada cliente cadastrado em uma agência específica pode possuir várias contas bancárias.
+Para os clientes deseja-se armazenar o nome, o RG e a cidade na qual residem, além de suas
+contas bancárias. Dados importantes para as contas dos clientes da agência são o número da
+conta, o saldo e informações sobre o conjunto de transações (número_transação, data, valor)
+associadas à conta.
+
+Exercício 3 – Biblioteca
+
+Uma biblioteca pretende substituir o velho arquivo de fichas em papel por um sistema de
+informação que mantém as informações dos livros do acervo, dos usuários cadastrados na
+biblioteca e dos empréstimos feitos pelos usuários.
+Sobre os livros deseja-se armazenar o título, ISBN, autores, ano de publicação, o número de
+exemplares existentes na biblioteca e dados sobre a editora. Sobre as editoras sabe-se o nome,
+endereço e telefone. Cada livro pode possuir vários exemplares. Os exemplares de cada livro
+são identificados por um número seqüencial incrementado de acordo com o número de
+cópias.
+Sobre os usuários deseja-se armazenar o número de associado, o nome, endereço e telefone.
+Além disso, deseja-se armazenar informações sobre os empréstimos realizados, ou seja, que
+usuário está com que exemplar de que livro. Um usuário pode ter vários exemplares
+emprestados. 
+
+Exercício 4 - Olhar o pdf, ex de ER.
