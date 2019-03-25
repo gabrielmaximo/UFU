@@ -8,7 +8,6 @@ AOC = Arquitetura e Organização de Computadores.
 LFA = Linguagens Formais e Automatos.
 POO = Programação Orientada a Objetos.
 SO = Sistemas Operacionais
-PROLOG = Programação Logica
+PL = Programação Logica
 SBD = Sistema de Banco de Dados.
 PF = Programação Funcional
-

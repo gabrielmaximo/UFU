@@ -1,12 +1,23 @@
-1. Defina e correlacione os conceitos de banco de dados, sistema de banco de dados e de
-sistema gerenciador de banco de dados.
+1. Defina e correlacione os conceitos de banco de dados, sistema de banco de dados e de sistema gerenciador de banco de dados.
+	R: O conceito de banco de dados, é basicamente um aglomerado de informações reunidas e diretamente relacionadas, que sao armazenadas sobre um dominio específico, ja 
+o SBD é um sitema de regitros envolvendo quatro componentes principais, hardware, software e usuario, um SBD possui como objetivo isolar o usuario de datalhes 
+mais internos do BD(abstração de dados) e prover independencia de dados as aplicações, com o SGBD é um pouco diferente, pois é um software com recursos específicos para 
+facilitar a manipulação de informações de um BD e o desenvolivmento de programas aplicativos como Oracle, Parados, MySQL, Interbase, Sybase, etc..
 
 2. Como os SGBD garantem independência e consistência de dados?
+	R: Através dos mecanismos de roll backs por exemplo, para evitar que um estado de inconsistencia seja realizado o roll back devolve a base de dados ao seu estado de 
+consistência. E a independência, e garantido porque cada aplicação vê apenas os dados que lhe interessam, Ela nao precisa saber como os dados estão fisicamente armazenados, 
+e tambem nao precisa ser modificada caso a estrutura de dados seja alterada.
 
 3. Discuta as vantagens de um SBD quando comparado com um sistema de arquivos.
+    R: Quando possuir um conjunto muito grande de dados, é inviavel usar um sistema local de arquivos, pois um SBD possui diversas vantagens como independencia de arquivos, 
+ou seja um SBD nao precisa conhecer as estruturas dos dados, nao precisa saber detalhes de como seus dados estao fisicamente armazenados e também possui Redundancia 
+controlada,os dados armazenados possuem consistencia e segurança entre muitas outras vantagens que superam os arquivos locais convencionais, porem um sistema de arquivos para 
+dados pequenos costuma ser mais vantajoso pela questão de custo e facilidade de gerenciamente.
 
-4. Descreva como ocorre a abstração de dados em cada um dos níveis da arquitetura
-em três níveis (three-schema) dos sistemas de banco de dados.4
+4. Descreva como ocorre a abstração de dados em cada um dos níveis da arquitetura em três níveis (three-schema) dos sistemas de banco de dados.
+    R: Uma vez que muitos dos usuários de banco de dados não são treinados para computação, a complexidade está escondida deles através de diversos níveis de abstração que
+    simplificam a interação do usuário com o sistema. No nivel mais baixo (Nivel Físico) esta a complexidade de como os dados estão armazenados realmente
 
 5. Por que a independência lógica é mais difícil de ser obtida do que a independência física?
 
@@ -16,8 +27,4 @@ em três níveis (three-schema) dos sistemas de banco de dados.4
 
 8. Qual a diferença entre DDL e DML?
 
-9. Analisando a estrutura de componentes do SGBD dada em aula, explique o que ocorre
-em cada componente e como é o fluxo de dados/informações entre os componentes.
-Basear-se nos textos dos livros sugeridos para leitura. OBS: não é para somente copiar
-dos slides a funcionalidade de cada componente, mas sim para descrever todo o processo
-ocorrido a partir de cada componente externo ao SGBD. 
+9. Analisando a estrutura de componentes do SGBD dada em aula, explique o que ocorre em cada componente e como é o fluxo de dados/informações entre os componentes.
