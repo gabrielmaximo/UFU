@@ -17,14 +17,37 @@ dados pequenos costuma ser mais vantajoso pela questão de custo e facilidade de
 
 4. Descreva como ocorre a abstração de dados em cada um dos níveis da arquitetura em três níveis (three-schema) dos sistemas de banco de dados.
     R: Uma vez que muitos dos usuários de banco de dados não são treinados para computação, a complexidade está escondida deles através de diversos níveis de abstração que
-    simplificam a interação do usuário com o sistema. No nivel mais baixo (Nivel Físico) esta a complexidade de como os dados estão armazenados realmente
+simplificam a interação do usuário com o sistema. No nivel mais baixo (Nivel Físico) esta a complexidade de como os dados estão armazenados realmente
 
 5. Por que a independência lógica é mais difícil de ser obtida do que a independência física?
+    R: Porque ela modifica o esquema conceitual de um Banco de Dados a fim de alterar por exemplo a estrutura de um BD, o que pode acarretar em erros graves na hora de 
+criar e armazenar essas estruturas novas.
 
 6. Diferencie instância e esquema.
+    R:Um esquema é especificado durante o projeto da base de dados com diagramas de entidades e relacionamentos, nao sofre muitas alterações, ja as instâncias são
+são dados presentes em qualquer ponto do tempo de um Banco de Dados que estão sujeitos a mudanças frequentes.
 
 7. Qual a diferença entre um esquema de banco de dados e um estado de banco de dados?
+    R: Um esquema é o projeto em si de como um BD se comportará, e um Estado são as fases atuais e os comportamentos do Banco de Dados depois que foi criado, ou seja, é o
+funcionamento na pratica depois de projetado.
 
 8. Qual a diferença entre DDL e DML?
+    R: DDL e DML sao tipos de linguagens SQL. A linguagem SQL e divididade entre esses dois tipos. A principal diferença entre eles é que DDL esta mais relacionado com a
+estrutura de uma tabela, enquanto que DML manipula os registros que ficam nesta tabela.
 
 9. Analisando a estrutura de componentes do SGBD dada em aula, explique o que ocorre em cada componente e como é o fluxo de dados/informações entre os componentes.
+    R: 
+    * Componentes para o tratamento de consultas: Executa instruções de baixo nível geradas pelo compilador DML.
+    * Gerenciamento de transações: Garante a consistência do banco de dados a despeito de falhas no sistema, além de garantir que transações concorrentes serão executadas 
+sem conflitos em seus procedimentos.
+    * Compilador DDL: Interpreta os comandos DDL e os registra em um conjunto de tabelas que contêm o Dicionário de Dados.
+    * Gerenciador de Buffer: Gerencia a troca de informações entre o disco e a memória principal. Decide ainda quais dados colocar em cache.
+    * Gerenciador de Arquivos: Gerencia a alocação de espaços no armazenamento em disco e as estruturas de dados usadas para representar as informações armazenadas.
+    * Gerenciador de Armazenamento: Arquivo que retém os dados propriamente dito.
+    * Armazenamento: Arquivo que retém os dados propriamente dito.
+    * Recuperação e Log: Contém informações estatísticas relativas aos dados contidos no banco de dados. Usadas pelo processador de consultas para seleção de meios eficientes 
+para execução das consultas.
+    * Controle de Recorrencia: Proporcionam acesso rápido aos itens de dados que são associados a valores
+determinados.
+
+    OBS: A Respeito o Fluxo de Dados, basta olhar o diagrama disponível no slide de Aulas (Aula 1 Introdução)
