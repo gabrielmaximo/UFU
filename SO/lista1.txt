@@ -1,0 +1,39 @@
+1) Para que serve um sistema operacional de computador ? Cite 6 exemplos de sistemas operacionais
+de computador, juntamente com o nome dos seus fabricantes.
+    R: Sistema Operacional é o principal software de um Computador que gerencia os outros programas e aplicativos do sitema, monitorando
+e executando processos, qual programa sera executado pelo processador, as instancias, os arquivos/pastas e outros documentos, alem de 
+controlar e verificar cada etapa de Boot de um computador, organiza a gestão de memoria podendo até mesmo oferecer interfaces de
+comunicação com usuário. Exemplos de 6 SO: Manjaro Linux, Ubunto, Fedora, RedHat, Debian, Gentoo.
+
+2) Cite quais são os principais módulos que compõem um SO de acordo com os conceitos
+apresentados na Unidade I. Descreva o papel de cada um no contexto de um sistema operacional.
+    R: 
+
+3) Qual a diferença entre processamento simétrico e assimétrico em sistemas operacionais
+multiprocessados?
+    R: O processamento Simétrico possui memoria compartilhada, e está sob controle de apenas um Sistema Operacional. O processamento
+Assimétrico é exatamento o oposto, sua memoria nao é compartilhada e possui uma relação d processador mestre que designa aos outros 
+diferentes processos a serem realizados por cada um, pode estar sujeito ao controle de mais de um Sistema Operacional.
+
+4) Qual a diferença entre sistemas operacionais de rede e sistemas operacionais distribuídos? Cite
+dois exemplos de cada um destes sistemas.
+    R: Um sistema operacional de rede realiza a comunicação e a transferência de dados entre usuarios e servidores dessa rede. Cada nó
+da rede é independente e cada um executa suas próprias aplicações. Enquanto que um Sistemo Distribuído integra cooperativamente as tarefas
+de processamento dos computadores que compõe essa rede, passa a sensação ao usuário de que o sistem se comporta como uma arquitetura 
+multiprocessada.
+
+5) Cite as etapas envolvidas na inicialização (boot) de um sistema operacional. Explique o que
+acontece em cada etapa.
+    R: 
+
+6) Que tipo de informações são armazenadas na MBR e no Setor de Boot ?
+
+7) Qual a diferença entre boot manager e boot loader ?
+
+8) Em um computador com um único disco rígido e 4 sistemas operacionais instalados, qual o
+número de setores de boot existem? Quantas MBR são necessárias?
+
+9) Explique a diferença entre kernels monolítico, em camadas e microkernel. Cite um exemplo de SO
+que segue cada um destas arquiteturas.
+
+10) Explique a diferença entre sistemas operacionais do tipo lote, time sharing e tempo real. 
