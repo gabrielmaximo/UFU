@@ -1,32 +1,46 @@
-1) Para que serve um sistema operacional de computador ? Cite 6 exemplos de sistemas operacionais
+1) Para que serve um sistema operacional de computador? Cite 6 exemplos de sistemas operacionais
 de computador, juntamente com o nome dos seus fabricantes.
-    R: Sistema Operacional é o principal software de um Computador que gerencia os outros programas e aplicativos do sitema, monitorando
-e executando processos, qual programa sera executado pelo processador, as instancias, os arquivos/pastas e outros documentos, alem de 
-controlar e verificar cada etapa de Boot de um computador, organiza a gestão de memoria podendo até mesmo oferecer interfaces de
-comunicação com usuário. Exemplos de 6 SO: Manjaro Linux, Ubunto, Fedora, RedHat, Debian, Gentoo.
+    R: Sistema Operacional é o principal software de um Computador, gerencia e escalona processos e instancias, arquivos, pastas e também outros 
+documentos, faz parte da etapa de boot do computador,cuida da gestão de memoria e controla dispositivos de hardware, podendo até mesmo 
+oferecer interfaces de comunicação com usuário. Exemplos de 6 SO: Mac OS X, Android, Xbox Sistem OS, IOS, Windows 97, MS DOS.
 
 2) Cite quais são os principais módulos que compõem um SO de acordo com os conceitos
 apresentados na Unidade I. Descreva o papel de cada um no contexto de um sistema operacional.
-    R: 
+    R: Nucleo/Kernel: Ele é a alma do SO, sem ele nada funcionaria, controla memoria, processos, tarefas, hardware e demais recursos do computador.
+Gerenciador de processos: Ele gerencia os programas do computador, os programas são tratados como processos, ou seja, um fila de instancias, que serão
+enviadas ao processador para serem executadas.
+Escalonador: É o mecanismo usado em computadores de multi-processos para intercalar uma tarefa e outra, existindo dois principais métodos: Escalonamento por
+Cooperação e Escalonamento Preemptivo.
+Gerenciador de Arquivo: Gerencia os arquivos, pastas e documentos em disco de um computador.
 
 3) Qual a diferença entre processamento simétrico e assimétrico em sistemas operacionais
 multiprocessados?
-    R: O processamento Simétrico possui memoria compartilhada, e está sob controle de apenas um Sistema Operacional. O processamento
-Assimétrico é exatamento o oposto, sua memoria nao é compartilhada e possui uma relação d processador mestre que designa aos outros 
-diferentes processos a serem realizados por cada um, pode estar sujeito ao controle de mais de um Sistema Operacional.
+    R: O processamento simétrico possui memoria compartilhada e esta sob controle de um unico Sistema Operacional, ou seja, existe paralelismo entre as tarefas,
+além disso, qualquer processador pode continuar uma tarefa anteriormente executada por outro processador. No processamento assimétrico os processadores são 
+controlados por um processador mestre que distribui as tarefas aos demais processadores, e com isso os processadores não possuem o mesmo tipo de paralalismo 
+comparado ao simétrico, emprega sistemas Opercaionais distintos.
 
 4) Qual a diferença entre sistemas operacionais de rede e sistemas operacionais distribuídos? Cite
 dois exemplos de cada um destes sistemas.
     R: Um sistema operacional de rede realiza a comunicação e a transferência de dados entre usuarios e servidores dessa rede. Cada nó
 da rede é independente e cada um executa suas próprias aplicações. Enquanto que um Sistemo Distribuído integra cooperativamente as tarefas
 de processamento dos computadores que compõe essa rede, passa a sensação ao usuário de que o sistem se comporta como uma arquitetura 
-multiprocessada.
+multiprocessada. Ou seja, no Sistema de rede o usuário solicita explicitamente o recurso na rede, enquanto que no Sistema Distribuído, o 
+usuário vê um unico sistema e tem a impressão de que todos os recursos são locais.
 
 5) Cite as etapas envolvidas na inicialização (boot) de um sistema operacional. Explique o que
 acontece em cada etapa.
-    R: 
+    R: O primeira passo de boot após ligar um computador, é, começa a etapa de Power On Self Test (POST), nele é verificado os componentes de hardware, 
+como RAM, CPU e Armazenamento Secundário, em seguida é inicializada a BIOS, que é um software contendo todas as informações de hardware da máquina. 
+Em sequencia o sistema de I/O também é incializado, ele é quem cordena a interação do usuário com o computador. Após a verificação de hardware e o 
+carregamento do sistema de I/O, caso exista, sera carregado o MBR, que verifica opções disponíveis de boot Armazenadas, apos isso,o sistema operacional 
+começa a ser carregado em RAM, junto com instruções específicas para o SO em particular. Com todas as etapas anteriores completas o processo de inicialização 
+passa o controle da maquina para o Sistema Operacional, e então, todas as rotinas de incialização do SO, começam a ser carregadas e o usuário pode fazer 
+login e então o computador estará pronto para para uso. 
+    
 
 6) Que tipo de informações são armazenadas na MBR e no Setor de Boot ?
+    R: 
 
 7) Qual a diferença entre boot manager e boot loader ?
 
