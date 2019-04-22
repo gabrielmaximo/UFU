@@ -1,0 +1,96 @@
+1) Explique a diferença entre programa e processo através de um exemplo.
+    R: Um programa é um arquivo geralmente armazenado em disco ou memoria secundária que contém instruções para uma CPU,
+um processo é uma instância de um programa em execução, geralmente armazenada em RAM, exemplo: um programa é um conjunto
+de código feito por um programador e salvo em uma pasta e um processo é o programa compilado e executado através de um compilador 
+ou interpretador que após isso é instanciado na RAM.
+
+2)Cite e explique as partes que compõem um processo.
+    R: Um processo é composto por contexto de hardware, contexto de software e espaço de endereçamento. O contexto de hardware
+armazena o conteudo dos registradores gerais da UCP, alem de outros registradores de uso especifico com o program counter (PC)
+Stack Point (SP) e registradores de status.Quando um processo está em execução, o seu contexto de hardware está armazenado nos 
+registradores do processador. No momento em que o processo perde a utilização da UCP, o sistema salva as informações no contexto de
+hardware do processo. O espaço de endereçamento é a área de memória pertencente ao processo onde as instruções e dados do programa são 
+armazenados para execução. Cada processo possui seu próprio espaço de endereçamento, que deve ser devidamente protegido do acesso
+dos demais processos. No contexto de software são especificados características e limites de recursos que podem ser alocados pelo processo, 
+como o número máximo de arquivos abertos simultaneamente, prioridade de execução e tamanho do buffer. Muitas destas características são 
+determinadas no momento da criação do processo, enquanto outras podem ser alteradas durante a execução.
+
+
+3) Com base na figura ao lado, explique quando ocorrem as seguintes situações:
+
+a)execução em user level no contexto do processo
+    R: Ocorre com qualquer operação que não envolva System Call, ex: Operações Aritiméticas ...
+
+b)execução em kernel level no contexto do processo
+    R: Ocorre quando envolva System Calls
+
+c)execução em user level no contexto do sistema
+    R: Não Aplicável
+
+d)execução em kernel level no contexto do sistema
+    R: Tarefas do Sistema, Escalonamento / Tratamento de eventos do RW
+
+4) Um processo cria outro processo usando a chamada de sistemas vfork. Em que situações o processo pai encerra sua execução?
+    R:  - Quando todos os seus filhos terminaram sua execução (todos deram exit)
+        - Quando o filho faz exec
+        - Quando o vfork falha
+
+5) Desenhe a hierarquia de processos criada a partir da execução do programa abaixo:
+
+int main(){
+    pid_t pids[2];                    R:          O
+    int i;                                 i = 0 / \ i = 2 
+    `                                           O   O
+    for(i=0; i < 2; i++ ){               i = 1 /
+             pids[i] = fork();                O
+    }
+    getchar();
+}
+
+6) Execute o programa do exercício (5) em um terminal e em um segundo terminal execute o seguinte programa “ps aux” . Com base na saída do progrma ps, 
+responda:
+a)Qual o PID do processo executando o programa do exercícios 5?
+b)Qual o PID do Pai (PPID) do processo executando o programa do exercício 5?
+c)Qual o PID de cada filho do processo executandoo programa do exercício 5?
+d)Quais os estados dos processos envolvidos nos exercícios (a, (b) e (c)?
+
+7) No Linux, após o processo Pai criar um processo Filho, qual processo (Pai ou Filho) será o próximo a ser executado? Faça experimentos de laboratório 
+para justificar sua resposta.
+
+8) Faça um programa que crie um processo Filho e aguarde seu término (dica: use wait() ) para finalizar. O processo Filho por sua vez imprime todos os 
+valores pares de 1 até 1000.
+
+9) Faça um programa que crie dois processos e aguarde seus términos para finalizar. O primeiro processo Filho criado deve imprimir todos os valores pares 
+de 1 até 1000, e o segundo Filho deve imprimir os valores ímpares no mesmo intervalo.
+
+10) Faça um programa que crie 50 processos filhos e aguarde otérmino de todos para finalizar. Cada processo Filho deve imprimir: 
+i) o pid do seu processo Pai e 
+ii) o seu próprio pid.
+
+11) Considerando o diagrama de transição de estados genéricos apresentado no slide 10 da Unidade II, descreva os estados e as possíveis transições que 
+podem ocorrer na execução do processo filho criado a partir do programa abaixo.
+int main(){
+    pid_t pid;
+    int status;
+    pid = fork();
+
+    if ( pid == 0 )  getchar();
+    else if (pid > 0 ) wait(&status);
+
+    exit(1);
+}
+
+12) Implemente três programas para realizar a computação abaixo. 
+O primeiro deve realizar a computação sem a criação de processos/threads. 
+O segundo deve ser baseado em múltiplos processos, onde o processo pai inicializa as matrizes M e Ne cria dois processos filhos, onde cada filho
+ficará responsável pela computação de M10 e N10. Ao término de cada filho, o processo Pai deve usar os resultados calculados por cada filho para computar R. 
+O terceirodeve ser baseado em múltiplasthreads, onde o processo cria duas threads. Uma thread ficará responsável pela computação de M10 e a outra pela computação 
+de N10. Ao término de ambas as threads, a thread
+principal do processo deve usar os resultados de cada uma das demais threads para computar R. R= M10x N10, onde Me Nsão matrizes 5000x5000 inicializadas com valores 
+inteiros aleatórios.Execute cada um dos três programas e avalie:
+
+a)Otempo de execução de cadaum (dica: use o comando time)
+
+b)O consumodea memória principal porcada programa (dica: use oscomandosps aux ou top ).
+
+c)A dificuldade de programação.

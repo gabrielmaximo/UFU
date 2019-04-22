@@ -22,32 +22,56 @@ comparado ao simétrico, emprega sistemas Opercaionais distintos.
 
 4) Qual a diferença entre sistemas operacionais de rede e sistemas operacionais distribuídos? Cite
 dois exemplos de cada um destes sistemas.
-    R: Um sistema operacional de rede realiza a comunicação e a transferência de dados entre usuarios e servidores dessa rede. Cada nó
-da rede é independente e cada um executa suas próprias aplicações. Enquanto que um Sistemo Distribuído integra cooperativamente as tarefas
-de processamento dos computadores que compõe essa rede, passa a sensação ao usuário de que o sistem se comporta como uma arquitetura 
-multiprocessada. Ou seja, no Sistema de rede o usuário solicita explicitamente o recurso na rede, enquanto que no Sistema Distribuído, o 
-usuário vê um unico sistema e tem a impressão de que todos os recursos são locais.
+    R: Um sistema operacional de rede realiza a comunicação e a transferência de dados entre computadores e servidores dessa rede feitas 
+manualmente pelo usuário. Cada nó da rede é independente e cada um executa suas próprias aplicações. Enquanto que um Sistemo Distribuído integra 
+cooperativamente as tarefas de processamento dos computadores que compõe essa rede, passa a sensação ao usuário de que o sistema se comporta 
+como uma arquitetura multiprocessada pois o proprio sistema controla de maneira abstrata as aplicações em cada computador. Ou seja, no Sistema de 
+rede o usuário solicita explicitamente o recurso na rede, enquanto que no Sistema Distribuído, o usuário vê um unico sistema e tem a impressão de 
+que todos os recursos são locais pois o sistema faz a distribuição dos recursos em rede de maneira abstrata em relação ao usuário. Exemplos:
+*SOR: Familia Linux, Windows XP.
+*SOD: Amoeba, Sprite.
 
 5) Cite as etapas envolvidas na inicialização (boot) de um sistema operacional. Explique o que
 acontece em cada etapa.
-    R: O primeira passo de boot após ligar um computador, é, começa a etapa de Power On Self Test (POST), nele é verificado os componentes de hardware, 
-como RAM, CPU e Armazenamento Secundário, em seguida é inicializada a BIOS, que é um software contendo todas as informações de hardware da máquina. 
-Em sequencia o sistema de I/O também é incializado, ele é quem cordena a interação do usuário com o computador. Após a verificação de hardware e o 
-carregamento do sistema de I/O, caso exista, sera carregado o MBR, que verifica opções disponíveis de boot Armazenadas, apos isso,o sistema operacional 
-começa a ser carregado em RAM, junto com instruções específicas para o SO em particular. Com todas as etapas anteriores completas o processo de inicialização 
-passa o controle da maquina para o Sistema Operacional, e então, todas as rotinas de incialização do SO, começam a ser carregadas e o usuário pode fazer 
-login e então o computador estará pronto para para uso. 
-    
+    R: A primeira etapa de boot é a inicialização da BIOS, nela será carregado todos os dispositivos de hardware da maquina e também outros
+dispositivos de Entrada e Saida como mouse e teclado por exemplo, na primeira etapa a memória CMOS é carregada, nela contém informações referentes
+ao hardware da maquina. Nessa mesma etapa acontece o Power-on Self Test (POST), ele é um conjunto de testes realizado pela BIOS para saber se todo o 
+hardware necessario para ligar o computador está devidamente funcionando, caso não esteja, erros serão exibidos e bips podem ser soados. Na segunda
+etapa procura-se por um SO armazenado em disco, ou Armazenamento secundário (Boot Manager). Na terceira etapa o Master Boot Record (MBR) é iniciado no 
+disco ou simulado a partir de algum outro dispositivo de armazenamento secundário, e nele contém um código simples de até 512 bytes que alavanca a 
+inicialização do SO. Na quarta etapa, é iniciado o Boot Loader, a partir dele que o kernel do SO é carregado, o kernel serve para firmar uma comunicação 
+estável entre hardware e software, nessa etapa o controle do computador deixa de ser controlado pela BIOS e passa a ser controlado pelo Kernel carregado. 
+Na quinta etapa o Kernel começa a carregar os arquivos principais e informações basicas do SO, junto com drivers de hardware e suas DLLs, o Kernel nao carrega 
+todos os arquivos para não sobrecarregar o sistema, somente o essencial é carregado em RAM inicialmente, após isso a tela de login do usuário e carregada, e 
+então os programas e processos relacionados a inicialização do SO são carregados juntos (interface gráfica e demais aplicativos).
 
 6) Que tipo de informações são armazenadas na MBR e no Setor de Boot ?
-    R: 
+    R: O MBR armazena as informações sobre como as partições lógicas, contendo sistemas de arquivos, são organizadas nessa mídia (boot manager) e la também é 
+armazenado um código simples, responsável por chamar as etapas de inicialização do SO (setor de boot). No setor de boot está o boot loader que contem o kernel 
+do SO a ser carregado. 
 
 7) Qual a diferença entre boot manager e boot loader ?
+    R: o boot manager é um programa que gerencia as partições que possuem um SO instalado e pronto para ser inicializado e as exibe como um menu, 
+enquanto que o boot loader é o responsável por carregar o kernel do SO em si disponivel naquela partição.
 
 8) Em um computador com um único disco rígido e 4 sistemas operacionais instalados, qual o
 número de setores de boot existem? Quantas MBR são necessárias?
+    R: Nesse disco existe 1 MBR e também contém 4 setores de boot
 
 9) Explique a diferença entre kernels monolítico, em camadas e microkernel. Cite um exemplo de SO
 que segue cada um destas arquiteturas.
+    R: Monolítico: é um kernel onde os subsistemas são fortemente acoplados e com isso gera algumas limitações como, o carregamento de todo o kernel para a RAM
+e pelo fato de ser fortemente acoplado, fica dificil fazer mudanças nesse sistema, pois uma mudança pode afetar os outros subsistemas. Ja o Kernel em camadas, é
+fracamente acoplado, pois evita o compartilhamento de estrutura de dados e parametros globais de funções, e isso resulta em uma manutenção mais facil do código e
+permite que seja executado diferentes subsistemas em modos diferentes da CPU. E no modelo de micro-kernel, temos o kernel reduzido, ou seja, as funções são aquelas
+mais próximas do hardware/arquitetura do computador e funções que não são proximas de hardware, essas viram processos de modo usuário, isso possibilita carga sobre demanda
+ou seja, carrega apenas o que será utilizado, diferene o monolítico que carrega absolutamente tudo do kernel. Exemplos: Micro-Kernel = Minx, MacNaCh; Monolítico: praticamente
+toda a familia Unix, as primeiras versões do windows, primeiras versões da familia Linux; Em Camadas: Solaris, HPU, "AIX".
 
 10) Explique a diferença entre sistemas operacionais do tipo lote, time sharing e tempo real. 
+    R: os 3 são sistemas multiprocessados, o Lote foi a primeira versão de SO multi-Tarefa, funcionava com uma lista de programas passados pelo usuário ao SO e na ordem da 
+lista, eles eram executados, a medida que os processos terminavam ou travavam, outro processo da lista assumia a prioridade. Ja o sistema time sharing começou com um sistema
+multi-usuário, o tempo de computação dos processos de cada usuário era compartilhado entre eles. E o sistema tempo real, são sistemas operacionais que se preocupam com o 
+determinismo da execução das tarefas, usado bastante em robótica e automação industrial, a diferença basica dos demais é que ele tem que garantir esse determinismo, 
+ou seja, se um processo de 5ms, por exemplo, deixa o processador para outra tarefa, dentro desse mesmo tempo ele tem que voltar a ser executado pelo processador, caso 
+contrário isso terá um impacto danoso e inesperado ao sistema.
