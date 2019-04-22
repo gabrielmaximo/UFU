@@ -5,16 +5,15 @@ de código feito por um programador e salvo em uma pasta e um processo é o prog
 ou interpretador que após isso é instanciado na RAM.
 
 2)Cite e explique as partes que compõem um processo.
-    R: Um processo é composto por contexto de hardware, contexto de software e espaço de endereçamento. O contexto de hardware
-armazena o conteudo dos registradores gerais da UCP, alem de outros registradores de uso especifico com o program counter (PC)
-Stack Point (SP) e registradores de status.Quando um processo está em execução, o seu contexto de hardware está armazenado nos 
-registradores do processador. No momento em que o processo perde a utilização da UCP, o sistema salva as informações no contexto de
-hardware do processo. O espaço de endereçamento é a área de memória pertencente ao processo onde as instruções e dados do programa são 
-armazenados para execução. Cada processo possui seu próprio espaço de endereçamento, que deve ser devidamente protegido do acesso
-dos demais processos. No contexto de software são especificados características e limites de recursos que podem ser alocados pelo processo, 
-como o número máximo de arquivos abertos simultaneamente, prioridade de execução e tamanho do buffer. Muitas destas características são 
-determinadas no momento da criação do processo, enquanto outras podem ser alteradas durante a execução.
+    R: Stack: - Memoria temporaria para argumentos
+              - Armazena endereço de memoria da rotina chamada
+              - Armazena o retorno
+              - Armazena variaveis locais
 
+       Heap:  - Area de alocação dinamica de memoria
+       BSS:   - Dados Globais são inicializados
+       Data:  - Dados globais inicializados
+       Text:  - Código Fonte
 
 3) Com base na figura ao lado, explique quando ocorrem as seguintes situações:
 
@@ -50,22 +49,94 @@ int main(){
 6) Execute o programa do exercício (5) em um terminal e em um segundo terminal execute o seguinte programa “ps aux” . Com base na saída do progrma ps, 
 responda:
 a)Qual o PID do processo executando o programa do exercícios 5?
+    R: PID = 7394
+
 b)Qual o PID do Pai (PPID) do processo executando o programa do exercício 5?
-c)Qual o PID de cada filho do processo executandoo programa do exercício 5?
-d)Quais os estados dos processos envolvidos nos exercícios (a, (b) e (c)?
+    R: PPID = 7394
+
+c)Qual o PID de cada filho do processo executando programa do exercício 5?
+    R: 7492, 7493, 7494, 7495 
+
+d)Quais os estados dos processos envolvidos nos exercícios (a), (b) e (c)?
+    R: a = executável, b = executável, c = dormentes 
 
 7) No Linux, após o processo Pai criar um processo Filho, qual processo (Pai ou Filho) será o próximo a ser executado? Faça experimentos de laboratório 
 para justificar sua resposta.
+    R: O processo pai nos sistemas Linux / Unix será o primeiro a ser executado mesmo após o pai criar um filho. A menos que se usa uma função denominada
+wait() para que o pai espere seu filho terminar para assim então começar seu processo, caso contrário o pai geralmente irá executar primeiro.
 
 8) Faça um programa que crie um processo Filho e aguarde seu término (dica: use wait() ) para finalizar. O processo Filho por sua vez imprime todos os 
 valores pares de 1 até 1000.
+    R: 
+int main() {
+    pid_t Filho;
+    int i, status;
+    if((Filho = fork()) < 0){
+        perror("erro no fork");
+        return 0;
+    }
+
+    else if (Filho == 0){
+        for(i = 2;i <= 1000; i+=2){
+            printf("%d\n", i);
+        }
+        printf("o processo filho terminou\n");
+    }
+    
+    else{
+        printf("esperando status do filho\n");
+        wait(&status);
+        printf("terminado\n");
+    }
+    return 0;
+}
 
 9) Faça um programa que crie dois processos e aguarde seus términos para finalizar. O primeiro processo Filho criado deve imprimir todos os valores pares 
 de 1 até 1000, e o segundo Filho deve imprimir os valores ímpares no mesmo intervalo.
+    R: 
+int main() {
+    pid_t p1, p2;
+    int i, x;
+    p1 = fork();
+    if(p1 == 0){
+        for(i = 2;i<=1000;i+=2){
+            printf("%d\n", i);
+        }
+    }
+    else if(p1 > 0){
+        p2 = fork();
+        if(p2 == 0){
+            for(i=1;i<1000;i++){
+                printf("%d\n", i);
+            }
+        }
+        else if(p2 > 0){
+            wait(&x);
+            wait(&x);
+        }
+    }
+}
 
-10) Faça um programa que crie 50 processos filhos e aguarde otérmino de todos para finalizar. Cada processo Filho deve imprimir: 
-i) o pid do seu processo Pai e 
+10) Faça um programa que crie 50 processos filhos e aguarde o término de todos para finalizar. Cada processo Filho deve imprimir: 
+i) o pid do seu processo Pai e; 
 ii) o seu próprio pid.
+    R:
+int main() {
+    pid_t p;
+    int i, x;
+    for(i=0;i<50;i++){
+        p = fork();
+        if(p == 0){
+            printf("%d %d\n", getpid(), getppid());
+            break;
+        }
+    }
+    if(p>0){
+        for(i=0;i<50;i++)
+            wait(&x);
+    }
+}
+
 
 11) Considerando o diagrama de transição de estados genéricos apresentado no slide 10 da Unidade II, descreva os estados e as possíveis transições que 
 podem ocorrer na execução do processo filho criado a partir do programa abaixo.
@@ -80,17 +151,18 @@ int main(){
     exit(1);
 }
 
+R: os unicos estados de transição possíveis que podem ocorrer na execução do processo filho são: Pronto -> Executando -> Espera/Bloqueado -> Executando -> Terminado 
+
 12) Implemente três programas para realizar a computação abaixo. 
-O primeiro deve realizar a computação sem a criação de processos/threads. 
-O segundo deve ser baseado em múltiplos processos, onde o processo pai inicializa as matrizes M e Ne cria dois processos filhos, onde cada filho
+* O primeiro deve realizar a computação sem a criação de processos/threads. 
+* O segundo deve ser baseado em múltiplos processos, onde o processo pai inicializa as matrizes M e N e cria dois processos filhos, onde cada filho
 ficará responsável pela computação de M10 e N10. Ao término de cada filho, o processo Pai deve usar os resultados calculados por cada filho para computar R. 
-O terceirodeve ser baseado em múltiplasthreads, onde o processo cria duas threads. Uma thread ficará responsável pela computação de M10 e a outra pela computação 
-de N10. Ao término de ambas as threads, a thread
-principal do processo deve usar os resultados de cada uma das demais threads para computar R. R= M10x N10, onde Me Nsão matrizes 5000x5000 inicializadas com valores 
-inteiros aleatórios.Execute cada um dos três programas e avalie:
+* O terceirodeve ser baseado em múltiplasthreads, onde o processo cria duas threads. Uma thread ficará responsável pela computação de M10 e a outra pela computação 
+de N10. Ao término de ambas as threads, a thread principal do processo deve usar os resultados de cada uma das demais threads para computar R. R = M10 x N10, onde 
+M e N são matrizes 5000x5000 inicializadas com valores inteiros aleatórios.Execute cada um dos três programas e avalie:
 
-a)Otempo de execução de cadaum (dica: use o comando time)
+a)O tempo de execução de cada um (dica: use o comando time)
 
-b)O consumodea memória principal porcada programa (dica: use oscomandosps aux ou top ).
+b)O consumo da memória principal por cada programa (dica: use os comandos ps aux ou top ).
 
 c)A dificuldade de programação.
