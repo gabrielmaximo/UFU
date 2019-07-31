@@ -1,5 +1,4 @@
 //ArvBin.c    https://pt.wikibooks.org/wiki/Programar_em_C/Árvores_binárias
-
 #include <stdio.h>
 #include <stdlib.h>
 

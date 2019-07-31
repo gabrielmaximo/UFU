@@ -1,5 +1,4 @@
 // ArvBin.main
-
 #include "ArvBin.c"
 
 int main(){
@@ -37,15 +36,15 @@ int main(){
     nos = contarNos(*raiz);
     folhas = contarFolhas(*raiz);
     h = altura(*raiz);
-    printf("\nA altura é: %d\nA qtd de nos é: %d\nA qtd de folhas é: %d\n", h, nos, folhas);
+    printf("\nA altura eh: %d\nA qtd de nos eh: %d\nA qtd de folhas eh: %d\n", h, nos, folhas);
     maior = maiorElem(*raiz);
     menor = menorElem(*raiz);
-    printf("O maior elem da arvore é: %d\nO menor elem da arvore é: %d\n", maior, menor);
-    if(consultaValor(*raiz, 46)) printf("\nO valor está na Arvore\n");
-    else printf("O Valor não está na ARVORE!\n");
+    printf("O maior elem da arvore eh: %d\nO menor elem da arvore eh: %d\n", maior, menor);
+    if(consultaValor(*raiz, 46)) printf("\nO valor esta na Arvore\n");
+    else printf("O Valor nao esta na ARVORE!\n");
     exibirPares(*raiz);
     pares = contarNosPares(*raiz);
-    printf("\nO numero de Pares da arvore é: %d\n", pares);
+    printf("\nO numero de Pares da arvore eh: %d\n", pares);
     impares = nos - pares;
-    printf("A qtd de nós impares é: %d\n", impares);
+    printf("A qtd de nos impares eh: %d\n", impares);
 }
