@@ -9,6 +9,6 @@ LFA = Linguagens Formais e Automatos.
 POO = Programação Orientada a Objetos.  
 SO = Sistemas Operacionais  
 PL = Programação Logica  
-SBD = Sistema de Banco de Dados.  
 PF = Programação Funcional  
+SBD = Sistema de Banco de Dados.  
   
