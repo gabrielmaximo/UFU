@@ -11,4 +11,4 @@ SO = Sistemas Operacionais
 PL = Programação Logica  
 PF = Programação Funcional  
 SBD = Sistema de Banco de Dados.  
-  
+CG = Computação Gráfica.  
