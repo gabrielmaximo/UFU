@@ -3,7 +3,7 @@
 ### Disciplinas feitas durante a faculdade até a data hoje!  
 
 Disciplinas | Descrição  
------------ | ----------
+:-----------: | :----------:
 AED         | Algoritmos e Estrutura de Dados (c/c++).
 SD          | Sistema Digitais (vhdl).
 AOC         | Arquitetura e Organização de Computadores (asm).
