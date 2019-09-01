@@ -1,6 +1,8 @@
 # UFU - Universidade Federal de Uberlândia
 
-### Disciplinas feitas durante a faculdade até a data hoje!  
+### Disciplinas feitas durante a faculdade até a data hoje!
+
+#### Cada diretório refere-se a projetos academicos realizados ao longo do semestre
 
 *Disciplinas* | *Descrição*
 :---------:   | :----------:
