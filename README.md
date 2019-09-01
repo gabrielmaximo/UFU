@@ -2,7 +2,7 @@
 
 ### Disciplinas feitas durante a faculdade até a data hoje!  
 
-```AED``` = Algoritmo e Estrutura de Dados.  
+> AED = Algoritmo e Estrutura de Dados.  
 ```SD``` = Sistema Digitais  
 ```AOC``` = Arquitetura e Organização de Computadores.  
 ```LFA``` = Linguagens Formais e Automatos.  
