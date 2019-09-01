@@ -2,8 +2,8 @@
 
 ### Disciplinas feitas durante a faculdade até a data hoje!  
 
-Disciplinas | Descrição  
-:---------: | :----------:
+Disciplinas | :Descrição:  
+:---------: | ----------:
 AED         | Algoritmos e Estrutura de Dados (c/c++).
 AOC         | Arquitetura e Organização de Computadores (asm).
 CG          | Computação Gráfica (python).
