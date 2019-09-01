@@ -1,6 +1,7 @@
 # UFU - Universidade Federal de Uberlândia
 
-### Os diretórios desse repositório representam projetos acadêmicos realizados ao longo dos semestres dentro da universidade, e a tabela abaixo descreve a tag da disciplina, onde na descrição está seu respectivo nome dentro da grade curricular.
+### Os diretórios desse repositório representam projetos acadêmicos realizados ao longo dos semestres dentro da universidade.  
+A tabela abaixo descreve a tag da disciplina e na descrição está seu respectivo nome dentro da grade curricular.
 
 *Disciplinas* | *Descrição*
 :---------:   | :----------:
