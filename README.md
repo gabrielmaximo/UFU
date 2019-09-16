@@ -1,12 +1,13 @@
 # UFU - Universidade Federal de Uberlândia
 
-### Os diretórios desse repositório representam projetos acadêmicos realizados ao longo dos semestres dentro da universidade.  
-A tabela abaixo descreve a tag da disciplina e na descrição está seu respectivo nome dentro da grade curricular.
+### Projetos acadêmicos realizados ao longo dos semestres dentro da universidade.  
+A tabela abaixo descreve a tag da disciplina e na descrição está seu respectivo nome dentro da grade curricular com alguns projetos realizados.
 
 *Disciplinas* | *Descrição*
 :---------:   | :----------:
 AED           | Algoritmos e Estrutura de Dados (c/c++).
 AOC           | Arquitetura e Organização de Computadores (asm).
+ARC	      | Arquitetura de Redes de Computadores.
 CG            | Computação Gráfica (python).
 MSW           | Modelagem de Software.
 PF            | Programação Funcional (Haskell).
