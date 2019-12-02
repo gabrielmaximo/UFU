@@ -2,7 +2,7 @@
 
 ### Projetos acadêmicos realizados ao longo dos semestres dentro da universidade.  
 
-## disciplinas concludas:
+## disciplinas concluídas:
 
 A tabela abaixo descreve a tag da disciplina e na descrição está seu respectivo nome dentro da grade curricular com alguns projetos realizados.
 
